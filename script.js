@@ -9,9 +9,18 @@ function getComputerChoice() {
     return computerChoice
 }
 
+//Need to add validation to prompt field so we capture only rock, paper, or scissors without case sensitivity or invalid values
+
 function getPlayerChoice() {
     playerChoice = prompt('Choose rock, paper, or scissors.');
-    return playerChoice
+    if (playerChoice.toLowerCase() === 'rock' ||
+    playerChoice.toLowerCase() === 'paper' ||
+    playerChoice.toLowerCase() === 'scissors') {
+        console.log(playerChoice);
+        return playerChoice
+    } else {
+        alert('Invalid selection, please choose rock, paper, or scissors.');
+    }
 }
 
 //If player chooses rock and computer is scissors, you win 
