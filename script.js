@@ -55,8 +55,6 @@ function playOneGame () {
     }
 }
 
-//I'm learning loops in the next lesson so for now will run the game five times and total up scores to determine winner
-
 function fiveGameWinner () {
     if (computerScore > playerScore) {
         alert('Sorry pal, you lost the tournament to this computer with a final score of :' + computerScore + ' - ' + playerScore);
@@ -66,6 +64,8 @@ function fiveGameWinner () {
         alert('What are the odds?? It\'s a tie :D ' + playerScore + ' - ' + computerScore);
     }
 }
+
+//I'm learning loops in the next lesson so for now will run the game five times and total up scores to determine winner
 
 function gameToFive () {
     playOneGame();
