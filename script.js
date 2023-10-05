@@ -3,6 +3,8 @@
 const rockPaperScissors = ['rock', 'paper', 'scissors'];
 let computerChoice;
 let playerChoice;
+let computerScore;
+let playerScore;
 
 function getComputerChoice() {
     computerChoice = rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)];
@@ -45,7 +47,18 @@ function playOneGame () {
         alert(`You win! ${playerChoice} beats ${computerChoice}.`)
     } else {
         alert(`You lose! ${computerChoice} beats ${playerChoice}.`)
+
     }
 }
 
-playOneGame();
+//I'm learning loops in the next lesson so for now will run the game five times and total up scores to determine winner
+
+function gameToFive () {
+    playOneGame();
+    playOneGame();
+    playOneGame();
+    playOneGame();
+    playOneGame();
+}
+
+gameToFive();
