@@ -1,25 +1,42 @@
 // getComputerChoice will randomly return rock, paper, or scissors. 
 
 const rockPaperScissors = ['rock', 'paper', 'scissors'];
+let computerChoice;
+let playerChoice;
 
 function getComputerChoice() {
-    let computerChoice = rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)]
-    console.log('Computer chooses ' + computerChoice);
+    computerChoice = rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)];
     return computerChoice
 }
 
-//Write a function that plays a single round of Rock Paper Scissors. 
-//The function should take the two parameters and then return a string that declares the winner of the round
-
 function getPlayerChoice() {
-    let playerChoice = prompt('Choose rock, paper, or scissors.');
-    console.log('Player chooses ' + playerChoice);
+    playerChoice = prompt('Choose rock, paper, or scissors.');
+    return playerChoice
 }
 
-function playOneGame() {
+//If player chooses rock and computer is scissors, you win 
+//If paper and comp is rock you win
+//If scissors and comp is paper you win 
+//If playerChoice = computerChoice it's a tie 
+//Else you lose
+//This function initiates a game and declares the winner with an alert
+
+function playOneGame () {
     getPlayerChoice();
     getComputerChoice();
+    console.log('Computer chooses ' + computerChoice);
+    console.log('Player chooses ' + playerChoice);
+    if (playerChoice == computerChoice) {
+        alert(`It\'s a tie! ${playerChoice} is the same as ${computerChoice}.`)
+    } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
+        alert(`You win! ${playerChoice} beats ${computerChoice}.`)
+    } else if (playerChoice == 'paper' && computerChoice == 'rock') {
+        alert(`You win! ${playerChoice} beats ${computerChoice}.`)
+    } else if (playerChoice == 'scissors' && computerChoice == 'paper') {
+        alert(`You win! ${playerChoice} beats ${computerChoice}.`)
+    } else {
+        alert(`You lose! ${computerChoice} beats ${playerChoice}.`)
+    }
 }
 
 playOneGame();
-
