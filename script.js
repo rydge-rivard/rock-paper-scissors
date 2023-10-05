@@ -16,4 +16,10 @@ function getPlayerChoice() {
     console.log('Player chooses ' + playerChoice);
 }
 
-getPlayerChoice();
+function playOneGame() {
+    getPlayerChoice();
+    getComputerChoice();
+}
+
+playOneGame();
+
