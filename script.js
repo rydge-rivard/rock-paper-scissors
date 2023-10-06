@@ -1,5 +1,3 @@
-// getComputerChoice will randomly return rock, paper, or scissors. 
-
 const rockPaperScissors = ['rock', 'paper', 'scissors'];
 let computerChoice;
 let playerChoice;
@@ -11,8 +9,6 @@ function getComputerChoice() {
     return computerChoice
 }
 
-//Need to add validation to prompt field so we capture only rock, paper, or scissors without case sensitivity or invalid values
-
 function getPlayerChoice() {
     playerChoice = prompt('Choose rock, paper, or scissors.');
     if (playerChoice.toLowerCase() === 'rock' ||
@@ -23,13 +19,6 @@ function getPlayerChoice() {
         alert('Invalid selection, please choose rock, paper, or scissors.');
     }
 }
-
-//If player chooses rock and computer is scissors, you win 
-//If paper and comp is rock you win
-//If scissors and comp is paper you win 
-//If playerChoice = computerChoice it's a tie 
-//Else you lose
-//This function initiates a game and declares the winner with an alert
 
 function playOneGame () {
     getPlayerChoice();
@@ -64,8 +53,6 @@ function fiveGameWinner () {
         alert('What are the odds?? It\'s a tie :D ' + playerScore + ' - ' + computerScore);
     }
 }
-
-//I'm learning loops in the next lesson so for now will run the game five times and total up scores to determine winner
 
 function gameToFive () {
     playOneGame();
