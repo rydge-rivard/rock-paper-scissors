@@ -32,12 +32,16 @@ function playOneGame () {
     }
 }
 
-let buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playerChoice = button.id;
-        console.log(playerChoice);
+        const container = document.querySelector('.results')
+        let returnPlayerChoice = document.createElement('div');
+        returnPlayerChoice.textContent = `You chose ${playerChoice}.`
+        container.appendChild(returnPlayerChoice);
         playOneGame();
     }) 
 });
+
