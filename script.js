@@ -37,11 +37,17 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playerChoice = button.id;
-        const container = document.querySelector('.results')
-        let returnPlayerChoice = document.createElement('div');
-        returnPlayerChoice.textContent = `You chose ${playerChoice}.`
-        container.appendChild(returnPlayerChoice);
         playOneGame();
+        
+        const container = document.querySelector('.results');
+        let returnPlayerChoice = document.createElement('div');
+        returnPlayerChoice.textContent = `You chose ${playerChoice}.`;
+        container.appendChild(returnPlayerChoice);
+
+        const scoreboard = document.querySelector('.scoreboard');
+        scoreboard.textContent = `Computer: ${computerScore} -- Player: ${playerScore}`;
     }) 
 });
 
+// js creates a new div element that shows score of each player and reports who won 
+// once a player reaches 5 it announces the winner 
