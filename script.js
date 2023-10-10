@@ -44,6 +44,15 @@ function playOneGame () {
     }
 }
 
+let buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', playOneGame)
+});
+
+//addEventListener('click', playOneGame);
+
+
 /*
 function fiveGameWinner () {
     if (computerScore > playerScore) {
