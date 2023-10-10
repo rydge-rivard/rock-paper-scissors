@@ -41,10 +41,8 @@ buttons.forEach((button) => {
         playerChoice = button.id;
         playOneGame();
 
-        const container = document.querySelector('.return-player-choice');
-        let returnPlayerChoice = document.createElement('div');
-        returnPlayerChoice.textContent = `You chose ${playerChoice}.`;
-        container.appendChild(returnPlayerChoice);
+        const printPlayerChoice = document.querySelector('.return-player-choice');
+        printPlayerChoice.textContent = `You chose ${playerChoice}.`;
 
         const scoreboard = document.querySelector('.scoreboard');
         scoreboard.textContent = `Computer: ${computerScore} -- Player: ${playerScore}`;
