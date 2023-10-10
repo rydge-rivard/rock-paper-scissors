@@ -44,6 +44,7 @@ function playOneGame () {
     }
 }
 
+/*
 function fiveGameWinner () {
     if (computerScore > playerScore) {
         alert('Sorry pal, you lost the tournament to this computer with a final score of :' + computerScore + ' - ' + playerScore);
@@ -68,3 +69,4 @@ function gameToFive () {
 }
 
 gameToFive();
+*/
