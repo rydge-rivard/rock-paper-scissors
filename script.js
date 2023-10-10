@@ -11,22 +11,24 @@ function getComputerChoice() {
 
 function playOneGame () {
     getComputerChoice();
+    const results = document.querySelector('.result');
+
     if (playerChoice == computerChoice) {
-        alert(`It\'s a tie! ${playerChoice} is the same as ${computerChoice}.`)
+        results.textContent = `It\'s a tie! ${playerChoice} is the same as ${computerChoice}.`;
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
-        alert(`You win! ${playerChoice} beats ${computerChoice}.`)
+        results.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         playerScore = playerScore + 1;
         return playerScore;
     } else if (playerChoice == 'paper' && computerChoice == 'rock') {
-        alert(`You win! ${playerChoice} beats ${computerChoice}.`)
+        results.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         playerScore = playerScore + 1;
         return playerScore;
     } else if (playerChoice == 'scissors' && computerChoice == 'paper') {
-        alert(`You win! ${playerChoice} beats ${computerChoice}.`)
+        results.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         playerScore = playerScore + 1;
         return playerScore;
     } else {
-        alert(`You lose! ${computerChoice} beats ${playerChoice}.`)
+        results.textContent = `You lose! ${computerChoice} beats ${playerChoice}.`;
         computerScore = computerScore + 1;
         return computerScore;
     }
@@ -38,8 +40,8 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playerChoice = button.id;
         playOneGame();
-        
-        const container = document.querySelector('.results');
+
+        const container = document.querySelector('.return-player-choice');
         let returnPlayerChoice = document.createElement('div');
         returnPlayerChoice.textContent = `You chose ${playerChoice}.`;
         container.appendChild(returnPlayerChoice);
@@ -48,6 +50,3 @@ buttons.forEach((button) => {
         scoreboard.textContent = `Computer: ${computerScore} -- Player: ${playerScore}`;
     }) 
 });
-
-// js creates a new div element that shows score of each player and reports who won 
-// once a player reaches 5 it announces the winner 
