@@ -12,30 +12,25 @@ function getComputerChoice() {
 function playOneGame () {
     getComputerChoice();
     const results = document.querySelector('.result');
-
     if (playerChoice == computerChoice) {
         results.textContent = `It\'s a tie! ${playerChoice} is the same as ${computerChoice}.`;
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
         results.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         playerScore = playerScore + 1;
-        return playerScore;
     } else if (playerChoice == 'paper' && computerChoice == 'rock') {
         results.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         playerScore = playerScore + 1;
-        return playerScore;
     } else if (playerChoice == 'scissors' && computerChoice == 'paper') {
         results.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         playerScore = playerScore + 1;
-        return playerScore;
     } else {
         results.textContent = `You lose! ${computerChoice} beats ${playerChoice}.`;
         computerScore = computerScore + 1;
-        return computerScore;
     }
+    firstPlayerToFive(playerScore, computerScore);
 }
 
 const buttons = document.querySelectorAll('button');
-
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playerChoice = button.id;
@@ -48,3 +43,16 @@ buttons.forEach((button) => {
         scoreboard.textContent = `Computer: ${computerScore} -- Player: ${playerScore}`;
     }) 
 });
+
+function firstPlayerToFive (playerScore, computerScore) {
+    const printWinner = document.createElement('h3');
+    const results = document.querySelector('.result');
+    if (playerScore === 5) {
+        printWinner.textContent = 'Humans rule! You were the first to five and beat the computer.'
+    } else if (computerScore === 5) {
+        printWinner.textContent = 'Machines are taking over... The computer was the first to five and won.'
+    } else {
+        printWinner.textContent = '';
+    }
+    results.appendChild(printWinner);
+}
